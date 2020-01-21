@@ -92,9 +92,16 @@ public class Exercises {
 	}
 
 	public boolean increasing(int[] numbers) {
-		// write your code here
-		
-		return false;	// default return value to ensure compilation
+		if (numbers == null || numbers.length < 3) {
+			return false;
+		} else {
+			for(int i = 0; i < numbers.length-2; i++) {
+				if(numbers[i] == numbers[i+1]-1 && numbers[i+1] == numbers[i+2]-1) {
+					return true;
+				}
+			}
+			return false;
+		}
 	}
 	
 	public boolean everywhere(int[] numbers, int x) {
