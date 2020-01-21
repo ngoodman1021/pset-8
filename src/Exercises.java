@@ -10,9 +10,21 @@ public class Exercises {
 	}
 	
 	public String[] endsMeet(String[] values, int n) {
-		// write your code here
-		
-		return null;	// default return value to ensure compilation
+		if (values == null || values.length < n || n < 1) {
+			String[] empty = new String[0];
+			return empty;
+		} else {
+			String[] newArray = new String[n*2];
+			int x = n;
+			for(int i = 0; i < n; i++) {
+				newArray[i] = values[i];
+			}
+			for(int i = values.length-n; i < values.length; i++) {
+				newArray[x] = values[i];
+				x++;
+			}
+			return newArray;
+		}
 	}
 	
 	public int difference(int[] numbers) {
