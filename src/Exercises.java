@@ -46,10 +46,28 @@ public class Exercises {
 	}
 	
 	public double biggest(double[] numbers) {
-		// write your code here
-		
-		return -1;		// default return value to ensure compilation
-	}
+		if (numbers == null || numbers.length < 3 || numbers.length % 2 == 0) {
+			return -1;
+		} else {
+			for(int i = 0; i < numbers.length; i++) {
+				if(numbers[i] < 0) {
+					return -1;
+				}
+			}
+			double first = numbers[0];
+			double middle = numbers[numbers.length/2];
+			double last = numbers[numbers.length-1];
+			if(first > middle && first > last) {
+				return first;
+			} else if (middle > first && middle > last) {
+				return middle;
+			} else if (last > first && last > middle) {
+				return last;
+			} else if (first == middle && middle == last) {
+				return first;
+			}
+		}
+	
 	
 	public String[] middle(String[] values) {
 		// write your code here
